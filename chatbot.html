@@ -52,10 +52,10 @@
 
         if (sender === 'user') {
             senderTitle.innerText = 'You';
-            senderTitle.classList.add('right-align'); // Add a class for right alignment
+            senderTitle.classList.add('right-align');
         } else if (sender === 'jamie') {
             senderTitle.innerText = 'Jamie';
-            senderTitle.classList.add('left-align'); // Add a class for left alignment
+            senderTitle.classList.add('left-align');
         }
         chatBox.appendChild(senderTitle);
 
@@ -74,8 +74,19 @@
 
         var timeStamp = document.createElement('div');
         var currentDate = new Date();
-        var options = { hour: 'numeric', minute: 'numeric', second: 'numeric', year: 'numeric', month: 'numeric', day: 'numeric', hour12: false };
-        timeStamp.innerText = currentDate.toLocaleDateString('en-US', options);
+
+        var day = currentDate.getDate();
+        var month = currentDate.getMonth() + 1; 
+        var year = currentDate.getFullYear();
+        var hours = currentDate.getHours();
+        var minutes = currentDate.getMinutes();
+        var seconds = currentDate.getSeconds();
+        var formattedDate = `${day}/${month}/${year}`;
+        var formattedTime = `${hours}:${minutes}:${seconds}`;
+        var formattedDateTime = `${formattedDate}, ${formattedTime}`;
+        timeStamp.innerText = formattedDateTime;
+
+
 
         timeStamp.style.fontSize = '12px';
         timeStamp.style.color = 'grey';

@@ -25,6 +25,13 @@ function sendMessage() {
             }, 500);
         }
 
+       else if (/[a-z]/.test(userInput) || /[A-Z]/.test(userInput)) {
+            // If the user input contains both lowercase and uppercase characters, respond with "jamie received: ..."
+            setTimeout(function () {
+                appendMessage('jamie', userInput);
+            }, 500);
+        }
+
         else if (isSpamming()) {
             setTimeout(function () {
                 appendMessage('jamie', 'Please give me some time to resolve the issue.',);
