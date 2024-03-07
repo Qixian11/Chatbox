@@ -2,7 +2,7 @@ $(document).ready(function () {
     // Initial greeting from Jamie
     setTimeout(function () {
         appendMessage('jamie', 'Hello ! Nice to meet you',);
-       
+
     }, 500);
 });
 
@@ -42,12 +42,7 @@ function sendMessage() {
                 appendMessage('jamie', 'Can I help you?',);
             }, 500);
         }
-
-        else if (/[a-z]/.test(userInput) && /[A-Z]/.test(userInput)) {
-            setTimeout(function () {
-                appendMessage('jamie', userInput);
-            }, 500);
-        } else {
+        else {
             setTimeout(function () {
                 appendMessage('jamie', "Sorry, I don't understand",);
             }, 500);
@@ -89,5 +84,5 @@ function isSpamming() {
     var currentTime = new Date().getTime();
     var timeDifference = currentTime - lastMessageTime;
     lastMessageTime = currentTime;
-    return timeDifference < 4000; 
+    return timeDifference < 4000;
 }
