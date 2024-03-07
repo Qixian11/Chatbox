@@ -1,0 +1,162 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(219, 230, 252);
+}
+
+Nav {
+    height: 6vh;
+    background: linear-gradient(to bottom, #d6d6d6, #ffffff, #d6d6d6);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+}
+
+nav img {
+    margin-right: 10px;
+    width: 20px;
+}
+
+.Container {
+    margin-top: 90px;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-bottom: 30px;
+    height: 730px;
+}
+
+.Container h1 {
+    font-size: 20px;
+}
+
+.chat-container {
+    height: 700px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: grid;
+    grid-template-rows: 0.5fr 7fr 2fr;
+    width: 100%
+}
+
+.chat-header {
+    border-radius: 7px 7px 0 0;
+    background-color: #007bff;
+    color: #fff;
+    display: flex;
+    font-weight: bold;
+    height: 70px;
+    align-items: center;
+
+}
+
+.chat-header img {
+    padding: 5px 10px 5px 30px;
+    width: 50px;
+
+}
+
+.chat-box {
+    padding: 25px;
+    background-color: white;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.chat-box .message {
+    margin: 10px;
+    border-radius: 8px;
+    background-color: #d3e9ff;
+    color: black;
+    padding: 10px 30px 10px 30px;
+    border-radius: 5px;
+    width: fit-content;
+}
+
+.sender-message {
+    background-color: #d3e9ff;
+    color: black;
+    align-self: flex-end;
+}
+
+.receiver-message {
+    background-color: #e0e0e0;
+    color: black;
+    align-self: flex-start;
+}
+
+
+.sender-title {
+    font-weight: bold;
+    margin-bottom: 5px;
+    align-items: end;
+}
+
+.right-align {
+    text-align: right;
+    margin-right: 10px;
+}
+
+.left-align {
+    text-align: left;
+    margin-left: 10px;
+}
+
+
+.chat-input {
+    border-top: 1px solid #e0e0e0;
+    padding: 10px;
+    background-color: #ffffff;
+    color: #02063d;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+textarea {
+    max-height: 100px;
+    padding: 8px;
+    margin-right: 10px;
+    overflow-y: auto;
+    border: none;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.button-with-image {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 3px;
+    cursor: pointer;
+    width: 80px;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #152238;
+    padding: 10px;
+    text-align: center;
+    align-items: center;
+    color: rgb(128, 140, 163);
+    height: 30px;
+    line-height: 30px;
+}
+
+footer p {
+    margin: 0;
+}

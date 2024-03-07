@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="chatbot.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="chatbox.js" type="text/javascript"></script>
+    <title>Chatbot Jamie</title>
+</head>
+
+<body>
+    <nav>
+        <img src="image/logo.png">
+        <h2> LOGO HERE</h2>
+    </nav>
+
+    <div class="Container">
+        <h1>ChatBox</h1>
+        <div class="chat-container">
+            <div class="chat-header">
+                <img src="image/profile.png" ;>
+                <p>Jamie</p>
+            </div>
+            <div class="chat-box" id="chat-box">
+            </div>
+            <div class="chat-input">
+                <textarea id="user-input" placeholder="Type your message..."></textarea>
+                <button onclick="sendMessage()" class="button-with-image">
+                    <img src="image/send.png" alt="Send Icon" width="12px" ;>
+                    Send
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    <footer>
+        <p> ©2023 Copyrights.All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>
+<script>
+    function appendMessage(sender, message) {
+        var chatBox = document.getElementById('chat-box');
+
+        var senderTitle = document.createElement('div');
+        senderTitle.classList.add('sender-title');
+
+        if (sender === 'user') {
+            senderTitle.innerText = 'You';
+            senderTitle.classList.add('right-align'); // Add a class for right alignment
+        } else if (sender === 'jamie') {
+            senderTitle.innerText = 'Jamie';
+            senderTitle.classList.add('left-align'); // Add a class for left alignment
+        }
+        chatBox.appendChild(senderTitle);
+
+        var newMessage = document.createElement('div');
+        newMessage.classList.add('message');
+
+        if (sender === 'user') {
+            newMessage.classList.add('sender-message');
+        } else {
+            newMessage.classList.add('receiver-message');
+        }
+
+        newMessage.innerText = message;
+        chatBox.appendChild(newMessage);
+
+
+        var timeStamp = document.createElement('div');
+        var currentDate = new Date();
+        var options = { hour: 'numeric', minute: 'numeric', second: 'numeric', year: 'numeric', month: 'numeric', day: 'numeric', hour12: false };
+        timeStamp.innerText = currentDate.toLocaleDateString('en-US', options);
+
+        timeStamp.style.fontSize = '12px';
+        timeStamp.style.color = 'grey';
+
+        if (sender === 'user') {
+            timeStamp.classList.add('right-align');
+        } else if (sender === 'jamie') {
+            timeStamp.classList.add('left-align');
+        }
+
+        chatBox.appendChild(timeStamp);
+        chatBox.scrollTop = chatBox.scrollHeight;
+    }
+</script>
