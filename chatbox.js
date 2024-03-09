@@ -24,7 +24,12 @@ function sendMessage() {
                 appendMessage('jamie', 'Can I help you?',);
             }, 500);
         }
+        else if (isYelling(userInput)) {
+            setTimeout(function () {
+                appendMessage('jamie', 'Please remain calm.',);
+            }, 500);
 
+        }
        else if (/[a-z]/.test(userInput) || /[A-Z]/.test(userInput)) {
             // If the user input contains both lowercase and uppercase characters, respond with "jamie received: ..."
             setTimeout(function () {
@@ -38,12 +43,7 @@ function sendMessage() {
             }, 500);
 
         }
-        else if (isYelling(userInput)) {
-            setTimeout(function () {
-                appendMessage('jamie', 'Please remain calm.',);
-            }, 500);
-
-        }
+  
         else if (mentionsJamie(userInput) && !containsMessage(userInput)) {
             setTimeout(function () {
                 appendMessage('jamie', 'Can I help you?',);
